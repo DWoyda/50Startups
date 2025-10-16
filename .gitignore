@@ -1,0 +1,12 @@
+venv/
+.env
+*.env
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+
+# ignoruj wszystkie dane...
+data/*
+# ...ale zachowaj ten folder i ten plik:
+!data/raw/
+!data/raw/50_Startups.csv
