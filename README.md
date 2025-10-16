@@ -89,15 +89,28 @@ Metrics captured:
 
 **Results Summary**:
 
-| Model               | Scaler         | MSE           |
-|--------------------|----------------|---------------|
-| Decision Tree       | StandardScaler | 35,225,563.35 |
-| Random Forest       | MinMaxScaler   | 38,318,888.21 |
-| Linear Regression   | MinMaxScaler   | 83,502,864.03 |
-| SVR                 | StandardScaler | 1,483,093,113 |
+| Model                  | Skalowanie       | Kodowanie kategorii | MSE           |
+|------------------------|------------------|----------------------|---------------|
+| DecisionTreeRegressor  | MinMaxScaler     | OneHotEncoder        | 35,225,563.35 |
+| DecisionTreeRegressor  | StandardScaler   | OneHotEncoder        | 35,225,563.35 |
+| RandomForestRegressor  | MinMaxScaler     | OneHotEncoder        | 38,318,880.21 |
+| RandomForestRegressor  | StandardScaler   | OneHotEncoder        | 38,318,880.21 |
+| LinearRegression       | MinMaxScaler     | OneHotEncoder        | 83,502,864.03 |
+| LinearRegression       | StandardScaler   | OneHotEncoder        | 83,502,864.03 |
+| SVR                    | StandardScaler   | OneHotEncoder        | 1,483,093,113.82 |
+| SVR                    | MinMaxScaler     | OneHotEncoder        | 1,483,206,464.42 |
+
 
 **Best performance**: Tree-based models  
 **Worst**: SVR – unsuitable without heavy tuning or outlier handling
+
+Additional Insight:
+Interestingly, for **LinearRegression** and **tree-based models (DecisionTree, RandomForest)** the results were **identical regardless of the numerical scaler** used (`StandardScaler` vs `MinMaxScaler`). This aligns with theory:
+
+- Tree-based models are **scale-invariant** – they split based on feature thresholds, not distances.
+- Linear Regression is **not affected in terms of error metrics** if no regularization is applied, since scaling just affects coefficient values, not predictions.
+
+This consistency confirms that our preprocessing logic is correct and models behave as expected. 
 
 ---
 
