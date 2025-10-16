@@ -9,6 +9,12 @@ This project analyzes the "50_Startups" dataset using multiple regression techni
 - Automate preprocessing with pipelines
 - Understand variable significance with statistical tools (OLS)
 
+**Source**: https://www.kaggle.com/datasets/farhanmd29/50-startups/data  
+**Files**:
+- `raw/50_Startups.csv` – original data from Kaggle.
+- `clean/50_Startups.parquet` – data after EDA
+
+
 ---
 
 ## Exploratory Data Analysis (EDA)
