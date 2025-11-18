@@ -120,19 +120,19 @@ This consistency confirms that our preprocessing logic is correct and models beh
 
 ---
 
-## 🧠 Why 3 Approaches?
+## Why 3 Approaches?
 
 Although one final automated pipeline might seem sufficient, we purposefully implemented all three for **learning and clarity**:
 
-- 🔍 **Manual OLS** taught statistical interpretation and backward elimination.
-- ⚙️ **Single-model pipeline** clarified how encoding/scaling affects modeling.
-- 🤖 **Multiple-model pipeline** allowed for comprehensive model comparison.
+- **Manual OLS** taught statistical interpretation and backward elimination.
+- **Single-model pipeline** clarified how encoding/scaling affects modeling.
+- **Multiple-model pipeline** allowed for comprehensive model comparison.
 
-🎯 **Value:** This structure helped **understand modeling from the ground up**, not just get a final prediction. Ideal for portfolio, interviews, and real-world prep.
+**Value:** This structure helped **understand modeling from the ground up**, not just get a final prediction. Ideal for portfolio, interviews, and real-world prep.
 
 ---
 
-## 📌 Key Conclusions
+## Key Conclusions
 
 - `R&D Spend` is by far the **most important predictor** (confirmed both statistically and algorithmically).
 - **Random Forest** and **Decision Tree** achieved the lowest MSE – robust for small tabular datasets.
